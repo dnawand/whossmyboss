@@ -5,7 +5,7 @@
 With Java 11 installed locally, run the following:
 
 ```bash
-./gradlew build -x text
+./gradlew build -x test
 java -jar build/libs/whosmyboss-1.0.0-all.jar
 ```
 
