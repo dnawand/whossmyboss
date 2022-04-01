@@ -26,6 +26,7 @@ dependencies {
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+    implementation('io.github.microutils:kotlin-logging-jvm:2.1.21')
     implementation("io.micronaut:micronaut-validation")
     implementation("org.postgresql:postgresql:42.3.3")
     implementation("io.micronaut.flyway:micronaut-flyway:5.2.0")

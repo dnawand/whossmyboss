@@ -1,6 +1,7 @@
 package org.hierarchy.repositories
 
 import jakarta.inject.Singleton
+import mu.KLogging
 import org.hierarchy.domain.Employee
 import org.hierarchy.domain.exceptions.DataNotFoundException
 import org.hierarchy.domain.ports.out.HierarchyRepository
@@ -37,7 +38,11 @@ class HierarchyRepositoryImpl(
             insertStatement.executeBatch()
             conn.commit()
         } catch (sqlException: SQLException) {
+            logger.error(sqlException) { "Database error. Could not store hierarchy." }
             throw sqlException
+        } catch (exception: Exception) {
+            logger.error(exception) { "Unknown error. Could not store hierarchy." }
+            throw exception
         } finally {
             conn?.close()
             insertStatement?.close()
@@ -79,7 +84,11 @@ class HierarchyRepositoryImpl(
                 }
             }
         } catch (sqlException: SQLException) {
+            logger.error(sqlException) { "Database error. Could not get employee hierarchy." }
             throw sqlException
+        } catch (exception: Exception) {
+            logger.error(exception) { "Unknown error. Could not get employee hierarchy." }
+            throw exception
         } finally {
             conn?.commit()
         }
@@ -104,7 +113,11 @@ class HierarchyRepositoryImpl(
                 Employee(name = employeeName)
             }
         } catch (sqlException: SQLException) {
+            logger.error(sqlException) { "Database error. Could not get employee." }
             throw sqlException
+        } catch (exception: Exception) {
+            logger.error(exception) { "Unknown error. Could not get employee." }
+            throw exception
         } finally {
             conn?.commit()
             selectStatement?.close()
@@ -142,7 +155,11 @@ class HierarchyRepositoryImpl(
                 employee
             }
         } catch (sqlException: SQLException) {
+            logger.error(sqlException) { "Database error. Could not get supervisors." }
             throw sqlException
+        } catch (exception: Exception) {
+            logger.error(exception) { "Unknown error. Could not get supervisors." }
+            throw exception
         } finally {
             selectStatement?.close()
         }
@@ -183,9 +200,15 @@ class HierarchyRepositoryImpl(
 
             employee
         } catch (sqlException: SQLException) {
+            logger.error(sqlException) { "Database error. Could not get subordinates." }
             throw sqlException
+        } catch (exception: Exception) {
+            logger.error(exception) { "Unknown error. Could not get subordinates." }
+            throw exception
         } finally {
             selectStatement?.close()
         }
     }
+
+    companion object : KLogging()
 }

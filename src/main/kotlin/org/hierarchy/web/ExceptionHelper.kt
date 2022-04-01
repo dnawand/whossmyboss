@@ -1,4 +1,4 @@
-package org.hierarchy
+package org.hierarchy.web
 
 import org.hierarchy.domain.exceptions.InvalidEntryException
 

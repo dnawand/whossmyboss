@@ -10,7 +10,6 @@ import io.ktor.routing.get
 import io.ktor.routing.post
 import io.micronaut.ktor.KtorRoutingBuilder
 import jakarta.inject.Singleton
-import org.hierarchy.ExceptionHelper
 import org.hierarchy.domain.exceptions.DataNotFoundException
 import org.hierarchy.domain.exceptions.InvalidEntryException
 import org.hierarchy.domain.ports.`in`.EmployeeService
