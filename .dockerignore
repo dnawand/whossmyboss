@@ -1,0 +1,8 @@
+.DS_Store
+.gradle
+.idea
+build/
+.gitignore
+gradlew.bat
+dockerfile
+docker-compose.yml

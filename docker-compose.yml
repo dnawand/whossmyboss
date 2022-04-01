@@ -1,0 +1,10 @@
+version: '3.0'
+
+services:
+  hierarchyapi:
+    build: .
+    ports:
+      - "8080:8080"
+
+volumes:
+  data-volume:

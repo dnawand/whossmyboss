@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: org.hierarchy
+testFramework: junit
+sourceLanguage: kotlin
+buildTool: gradle
+features: [annotation-api, app-name, gradle, http-client, jackson-databind, junit, kotlin, kotlin-build, ktor, logback, micronaut-build, readme, shade, yaml]
